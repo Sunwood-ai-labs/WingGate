@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  ubuntu_ssh:
+    build:
+      context: .
+      args:
+        SSH_PASSWORD: ${SSH_PASSWORD}
+    ports:
+      - "2222:22"
+    environment:
+      SSH_PASSWORD: ${SSH_PASSWORD}
