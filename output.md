@@ -1,10 +1,24 @@
-- /
-  - .env
-    ```plaintext
+# Project: WingGate
+
+```plaintext
+OS: nt
+Directory: C:\Prj\WingGate
+
+├─ docker-compose.yml
+├─ Dockerfile
+```
+
+## .
+
+`.env`
+
+```plaintext
 SSH_PASSWORD=your_password
-    ```
-  - docker-compose.yml
-    ```plaintext
+```
+
+`docker-compose.yml`
+
+```plaintext
 version: '3.8'
 
 services:
@@ -17,9 +31,11 @@ services:
       - "2222:22"
     environment:
       SSH_PASSWORD: ${SSH_PASSWORD}
-    ```
-  - Dockerfile
-    ```plaintext
+```
+
+`Dockerfile`
+
+```plaintext
 # 基本イメージを指定
 FROM ubuntu:latest
 
@@ -38,6 +54,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 # SSHサーバーの起動
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
-    ```
+```
+
 
 
